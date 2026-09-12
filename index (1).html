@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Great Karikala Magic Show - Experience the Ultimate Magic Performance">
+    <meta name="keywords" content="magic show, karikala, entertainment, magician">
+    <meta name="author" content="Great Karikala Magic Show">
+    <title>Great Karikala Magic Show - Experience Ultimate Magic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            font-family: 'Courier New', monospace;
+            color: #0ff;
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0088ff;
+            border-radius: 5px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid #0088ff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 136, 255, 0.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #0088ff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #0088ff;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            border-bottom: 2px solid #00ffff;
+        }
+
+        /* Matrix Code Rain Background */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Scan Lines Effect */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 136, 0.03),
+                rgba(0, 255, 136, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+        }
+
+        /* Main Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(0,20,40,0.95), rgba(0,40,60,0.95));
+        }
+
+        .welcome-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff, 0 0 30px #0055ff;
+            margin-bottom: 20px;
+            animation: flicker 3s infinite;
+            letter-spacing: 3px;
+        }
+
+        @keyframes flicker {
+            0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff, 0 0 30px #0055ff; }
+            50% { text-shadow: 0 0 5px #00ffff, 0 0 10px #0088ff, 0 0 15px #0055ff; }
+        }
+
+        .tagline {
+            font-size: 2rem;
+            color: #ff0055;
+            text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0088;
+            margin: 20px 0 30px;
+            animation: pulse-text 1.5s infinite;
+            letter-spacing: 2px;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .image-container {
+            margin: 30px 0;
+            box-shadow: 0 0 30px #0088ff, inset 0 0 30px rgba(0, 136, 255, 0.3);
+            border: 3px solid #0088ff;
+            padding: 5px;
+            max-width: 600px;
+            animation: pulse-border 2s infinite;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #00ffff;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 20px #0088ff, inset 0 0 20px rgba(0, 136, 255, 0.3); }
+            50% { box-shadow: 0 0 40px #0088ff, inset 0 0 40px rgba(0, 136, 255, 0.5); }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #00ff88;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00ff88;
+        }
+
+        .terminal-text {
+            font-size: 0.9rem;
+            color: #0088ff;
+            margin-top: 20px;
+            text-shadow: 0 0 5px #0088ff;
+            opacity: 0.8;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(0,20,40,0.9), rgba(0,40,60,0.9));
+            margin: 0;
+            border-top: 2px solid #0088ff;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        /* About Section */
+        #about {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            color: #00ff88;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-shadow: 0 0 5px #00ff88;
+        }
+
+        /* Contact Section */
+        #contact {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .contact-box {
+            background: rgba(0, 136, 255, 0.1);
+            border: 2px solid #0088ff;
+            padding: 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover {
+            background: rgba(0, 136, 255, 0.2);
+            box-shadow: 0 0 20px #0088ff;
+            transform: translateY(-5px);
+        }
+
+        .contact-box h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .contact-box p {
+            color: #00ff88;
+            word-break: break-all;
+        }
+
+        .contact-box a {
+            color: #0088ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        /* Social Links */
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            background: rgba(0, 136, 255, 0.1);
+            border: 2px solid #0088ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(0, 136, 255, 0.3);
+            box-shadow: 0 0 20px #0088ff;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            border-top: 2px solid #0088ff;
+            padding: 40px 30px;
+            text-align: center;
+            color: #0088ff;
+            text-shadow: 0 0 5px #0088ff;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .footer-section a {
+            color: #0088ff;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #0088ff;
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+
+            .image-container {
+                max-width: 90vw;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">⚡ KARIKALA MAGIC ⚡</div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#legal">LEGAL</a></li>
+        </ul>
+    </nav>
+
+    <canvas id="matrix-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <div class="content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1 class="welcome-text">WELCOME TO</h1>
+            <h1 class="welcome-text">GREAT KARIKALA MAGIC SHOW</h1>
+            <p class="tagline">🎪 SHOW WILL START SOON 🎪</p>
+            
+            <div class="image-container">
+                <img src="Gemini_Generated_Image_rf9dverf9dverf9d.png" alt="Karikala Magic Show">
+            </div>
+            
+            <p class="subtitle">✨ STEP INTO THE MAGIC ✨</p>
+            <p class="terminal-text">> System initialized... Welcome, traveler</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>> ABOUT_US.EXE</h2>
+            <div class="about-content">
+                <p>🎩 Welcome to the Great Karikala Magic Show - Where Reality Bends and Wonder Comes Alive! 🎩</p>
+                <br>
+                <p>Experience the most mesmerizing blend of ancient mysticism and modern illusion. Our legendary magician brings decades of experience, international recognition, and a passion for creating unforgettable moments.</p>
+                <br>
+                <p>Whether you're attending a corporate event, family gathering, or private celebration, the Great Karikala Magic Show promises to deliver jaw-dropping illusions, interactive performances, and pure enchantment that will leave your audience speechless.</p>
+                <br>
+                <p><strong>✨ Creating Memories. Defying Possibilities. Inspiring Wonder. ✨</strong></p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>> CONTACT_INFO.SYS</h2>
+            
+            <div class="contact-info">
+                <div class="contact-box">
+                    <h3>📞 PHONE</h3>
+                    <p>+91 XXXXX XXXXX</p>
+                    <p><small>(WhatsApp Available)</small></p>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>📧 EMAIL</h3>
+                    <p><a href="mailto:info@karikalamagic.com">info@karikalamagic.com</a></p>
+                    <p><small>Response within 24 hours</small></p>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>📍 LOCATION</h3>
+                    <p>Tamil Nadu, India</p>
+                    <p><small>Available for Pan-India Shows</small></p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="WhatsApp">💬</a>
+                <a href="#" title="YouTube">▶️</a>
+            </div>
+        </section>
+
+        <!-- Legal Section -->
+        <section id="legal">
+            <h2>> LEGAL_TERMS.DOC</h2>
+            
+            <div class="footer-content" style="text-align: center;">
+                <div class="footer-section" style="text-align: center;">
+                    <h3>📋 TERMS & CONDITIONS</h3>
+                    <p>By accessing this website, you agree to our terms and conditions. All content on this website is the property of Great Karikala Magic Show.</p>
+                </div>
+                
+                <div class="footer-section" style="text-align: center;">
+                    <h3>🔒 PRIVACY POLICY</h3>
+                    <p>We respect your privacy. Any personal information collected is used solely for booking inquiries and will never be shared with third parties.</p>
+                </div>
+                
+                <div class="footer-section" style="text-align: center;">
+                    <h3>⚖️ DISCLAIMER</h3>
+                    <p>Magic illusions are entertainment. All performances are artistic and created for audience enjoyment. Viewer discretion advised.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>QUICK LINKS</h3>
+                <a href="#home">🏠 Home</a>
+                <a href="#about">ℹ️ About</a>
+                <a href="#contact">📞 Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>BOOKING INFO</h3>
+                <p>📅 Available for bookings year-round</p>
+                <p>🎭 Corporate & Private Events</p>
+                <p>🎪 Festival & Fair Performances</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <p>🌐 Stay connected for updates</p>
+                <p>📱 Latest shows & announcements</p>
+                <p>✨ Behind the scenes content</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Great Karikala Magic Show. All Rights Reserved.</p>
+            <p>Website Design | <a href="#" style="color: #00ffff;">Terms</a> | <a href="#" style="color: #00ffff;">Privacy</a> | <a href="#" style="color: #00ffff;">Disclaimer</a></p>
+            <p style="margin-top: 10px; opacity: 0.7;">> Magical experiences crafted with precision and passion</p>
+        </div>
+    </footer>
+
+    <script>
+        // Matrix Code Rain Effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = '01अआइईउऊऋएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * canvas.height;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0088ff';
+            ctx.font = fontSize + 'px monospace';
+            ctx.globalAlpha = 0.3;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i]);
+
+                if (drops[i] > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i] += fontSize;
+            }
+            ctx.globalAlpha = 1.0;
+
+            requestAnimationFrame(drawMatrix);
+        }
+
+        drawMatrix();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Matrix Code Rain Effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * canvas.height;
+        }
+
+        function drawMatrix() {
+            // Semi-transparent black to create fade effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0088ff';
+            ctx.font = fontSize + 'px monospace';
+            ctx.globalAlpha = 0.3;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i]);
+
+                if (drops[i] > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i] += fontSize;
+            }
+            ctx.globalAlpha = 1.0;
+
+            requestAnimationFrame(drawMatrix);
+        }
+
+        drawMatrix();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
