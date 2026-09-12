@@ -6,35 +6,35 @@
     <meta name="description" content="Welcome to Great Karikala Magic Show - Experience the Ultimate Magic Performance">
     <meta name="keywords" content="magic show, karikala, entertainment, magician">
     <meta name="author" content="Great Karikala Magic Show">
-    <title>Great Karikalan Magic Show - Experience Ultimate Magic</title>
+    <title>Great Karikala Magic Show - Experience Ultimate Magic</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+ 
         body {
             background: #000000;
             font-family: 'Courier New', monospace;
             color: #0ff;
             scroll-behavior: smooth;
         }
-
+ 
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 10px;
         }
-
+ 
         ::-webkit-scrollbar-track {
             background: #000;
         }
-
+ 
         ::-webkit-scrollbar-thumb {
             background: #0088ff;
             border-radius: 5px;
         }
-
+ 
         /* Navigation Bar */
         nav {
             position: fixed;
@@ -49,7 +49,7 @@
             z-index: 1000;
             box-shadow: 0 0 20px rgba(0, 136, 255, 0.5);
         }
-
+ 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
@@ -57,13 +57,13 @@
             text-shadow: 0 0 10px #00ffff;
             letter-spacing: 2px;
         }
-
+ 
         .nav-links {
             display: flex;
             gap: 30px;
             list-style: none;
         }
-
+ 
         .nav-links a {
             color: #0088ff;
             text-decoration: none;
@@ -72,13 +72,13 @@
             text-shadow: 0 0 5px #0088ff;
             border-bottom: 2px solid transparent;
         }
-
+ 
         .nav-links a:hover {
             color: #00ffff;
             text-shadow: 0 0 10px #00ffff;
             border-bottom: 2px solid #00ffff;
         }
-
+ 
         /* Matrix Code Rain Background */
         canvas {
             position: fixed;
@@ -88,7 +88,7 @@
             height: 100%;
             z-index: 1;
         }
-
+ 
         /* Scan Lines Effect */
         .scanlines {
             position: fixed;
@@ -106,14 +106,14 @@
                 transparent 2px
             );
         }
-
+ 
         /* Main Content */
         .content {
             position: relative;
             z-index: 10;
             width: 100%;
         }
-
+ 
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -125,7 +125,7 @@
             padding-top: 80px;
             background: linear-gradient(135deg, rgba(0,20,40,0.95), rgba(0,40,60,0.95));
         }
-
+ 
         .welcome-text {
             font-size: 3.5rem;
             font-weight: bold;
@@ -135,12 +135,12 @@
             animation: flicker 3s infinite;
             letter-spacing: 3px;
         }
-
+ 
         @keyframes flicker {
             0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff, 0 0 30px #0055ff; }
             50% { text-shadow: 0 0 5px #00ffff, 0 0 10px #0088ff, 0 0 15px #0055ff; }
         }
-
+ 
         .tagline {
             font-size: 2rem;
             color: #ff0055;
@@ -149,12 +149,12 @@
             animation: pulse-text 1.5s infinite;
             letter-spacing: 2px;
         }
-
+ 
         @keyframes pulse-text {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
-
+ 
         .image-container {
             margin: 30px 0;
             box-shadow: 0 0 30px #0088ff, inset 0 0 30px rgba(0, 136, 255, 0.3);
@@ -163,19 +163,19 @@
             max-width: 600px;
             animation: pulse-border 2s infinite;
         }
-
+ 
         .image-container img {
             max-width: 100%;
             height: auto;
             display: block;
             border: 2px solid #00ffff;
         }
-
+ 
         @keyframes pulse-border {
             0%, 100% { box-shadow: 0 0 20px #0088ff, inset 0 0 20px rgba(0, 136, 255, 0.3); }
             50% { box-shadow: 0 0 40px #0088ff, inset 0 0 40px rgba(0, 136, 255, 0.5); }
         }
-
+ 
         .subtitle {
             font-size: 1.2rem;
             color: #00ff88;
@@ -183,7 +183,7 @@
             letter-spacing: 2px;
             text-shadow: 0 0 10px #00ff88;
         }
-
+ 
         .terminal-text {
             font-size: 0.9rem;
             color: #0088ff;
@@ -191,7 +191,7 @@
             text-shadow: 0 0 5px #0088ff;
             opacity: 0.8;
         }
-
+ 
         /* Section Styling */
         section {
             padding: 60px 30px;
@@ -199,7 +199,7 @@
             margin: 0;
             border-top: 2px solid #0088ff;
         }
-
+ 
         section h2 {
             font-size: 2.5rem;
             color: #00ffff;
@@ -208,33 +208,33 @@
             letter-spacing: 2px;
             text-align: center;
         }
-
+ 
         /* About Section */
         #about {
             max-width: 900px;
             margin: 0 auto;
         }
-
+ 
         .about-content {
             color: #00ff88;
             font-size: 1.1rem;
             line-height: 1.8;
             text-shadow: 0 0 5px #00ff88;
         }
-
+ 
         /* Contact Section */
         #contact {
             max-width: 900px;
             margin: 0 auto;
         }
-
+ 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin: 30px 0;
         }
-
+ 
         .contact-box {
             background: rgba(0, 136, 255, 0.1);
             border: 2px solid #0088ff;
@@ -242,41 +242,41 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-
+ 
         .contact-box:hover {
             background: rgba(0, 136, 255, 0.2);
             box-shadow: 0 0 20px #0088ff;
             transform: translateY(-5px);
         }
-
+ 
         .contact-box h3 {
             color: #00ffff;
             margin-bottom: 10px;
             text-shadow: 0 0 5px #00ffff;
         }
-
+ 
         .contact-box p {
             color: #00ff88;
             word-break: break-all;
         }
-
+ 
         .contact-box a {
             color: #0088ff;
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
+ 
         .contact-box a:hover {
             color: #00ffff;
             text-shadow: 0 0 10px #00ffff;
         }
-
+ 
         /* Social Links */
         .social-links {
             text-align: center;
             margin-top: 30px;
         }
-
+ 
         .social-links a {
             display: inline-block;
             width: 50px;
@@ -293,13 +293,13 @@
             font-size: 1.5rem;
             transition: all 0.3s ease;
         }
-
+ 
         .social-links a:hover {
             background: rgba(0, 136, 255, 0.3);
             box-shadow: 0 0 20px #0088ff;
             transform: scale(1.1);
         }
-
+ 
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.95);
@@ -309,7 +309,7 @@
             color: #0088ff;
             text-shadow: 0 0 5px #0088ff;
         }
-
+ 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -319,13 +319,13 @@
             margin-bottom: 30px;
             text-align: left;
         }
-
+ 
         .footer-section h3 {
             color: #00ffff;
             margin-bottom: 15px;
             text-shadow: 0 0 5px #00ffff;
         }
-
+ 
         .footer-section a {
             color: #0088ff;
             text-decoration: none;
@@ -333,49 +333,281 @@
             margin: 8px 0;
             transition: all 0.3s ease;
         }
-
+ 
         .footer-section a:hover {
             color: #00ffff;
             text-shadow: 0 0 10px #00ffff;
         }
-
+ 
         .footer-bottom {
             border-top: 1px solid #0088ff;
             padding-top: 20px;
             margin-top: 20px;
             font-size: 0.9rem;
         }
-
+ 
+        /* Login Page Styles */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(0,20,40,0.95), rgba(0,40,60,0.95));
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+ 
+        .login-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+ 
+        .login-box {
+            background: rgba(0, 20, 40, 0.8);
+            border: 3px solid #0088ff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px #0088ff, inset 0 0 30px rgba(0, 136, 255, 0.2);
+            max-width: 450px;
+            width: 90%;
+            animation: slideIn 0.8s ease;
+        }
+ 
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ 
+        .login-title {
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+            margin-bottom: 10px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+ 
+        .login-subtitle {
+            font-size: 0.9rem;
+            color: #0088ff;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px #0088ff;
+        }
+ 
+        .form-group {
+            margin-bottom: 25px;
+        }
+ 
+        .form-group label {
+            display: block;
+            color: #00ffff;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            text-shadow: 0 0 5px #00ffff;
+            letter-spacing: 1px;
+        }
+ 
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 136, 255, 0.1);
+            border: 2px solid #0088ff;
+            color: #00ffff;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 136, 255, 0.3);
+        }
+ 
+        .form-group input:focus {
+            outline: none;
+            background: rgba(0, 136, 255, 0.2);
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+ 
+        .form-group input::placeholder {
+            color: #0088ff;
+            opacity: 0.6;
+        }
+ 
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #0088ff, #00ffff);
+            border: 2px solid #00ffff;
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px #0088ff;
+        }
+ 
+        .login-button:hover {
+            background: linear-gradient(135deg, #00ffff, #0088ff);
+            box-shadow: 0 0 25px #00ffff;
+            transform: scale(1.02);
+        }
+ 
+        .login-button:active {
+            transform: scale(0.98);
+        }
+ 
+        .login-error {
+            color: #ff0055;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(255, 0, 85, 0.1);
+            border: 1px solid #ff0055;
+            border-radius: 5px;
+            text-shadow: 0 0 5px #ff0055;
+            display: none;
+        }
+ 
+        .login-error.show {
+            display: block;
+            animation: shake 0.3s;
+        }
+ 
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+ 
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #0088ff;
+            text-shadow: 0 0 5px #0088ff;
+        }
+ 
+        .remember-me {
+            display: flex;
+            align-items: center;
+            color: #00ff88;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+ 
+        .remember-me input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: #0088ff;
+        }
+ 
         /* Responsive Design */
         @media (max-width: 768px) {
             .welcome-text {
                 font-size: 2.5rem;
             }
-
+ 
             .tagline {
                 font-size: 1.5rem;
             }
-
+ 
             .nav-links {
                 gap: 15px;
                 font-size: 0.85rem;
             }
-
+ 
             .image-container {
                 max-width: 90vw;
             }
-
+ 
             section h2 {
                 font-size: 2rem;
             }
-
+ 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+ 
+            .login-box {
+                padding: 30px;
+                max-width: 95vw;
+            }
+ 
+            .login-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Login Page -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-box">
+            <h1 class="login-title">⚡ KARIKALA MAGIC ⚡</h1>
+            <p class="login-subtitle">> ACCESS_GRANTED.SYS</p>
+ 
+            <div class="login-error" id="loginError">
+                ⚠️ Invalid Username or Password
+            </div>
+ 
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">👤 USERNAME</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        placeholder="Enter username..."
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+ 
+                <div class="form-group">
+                    <label for="password">🔐 PASSWORD</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Enter password..."
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+ 
+                <label class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <span>Remember me</span>
+                </label>
+ 
+                <button type="submit" class="login-button">LOGIN NOW</button>
+            </form>
+ 
+            <div class="login-footer">
+                <p style="margin-bottom: 10px;">Demo Credentials:</p>
+                <p>Username: <strong>admin</strong></p>
+                <p>Password: <strong>karikala123</strong></p>
+            </div>
+        </div>
+    </div>
+ 
     <!-- Navigation -->
     <nav>
         <div class="logo">⚡ KARIKALA MAGIC ⚡</div>
@@ -386,10 +618,10 @@
             <li><a href="#legal">LEGAL</a></li>
         </ul>
     </nav>
-
+ 
     <canvas id="matrix-canvas"></canvas>
     <div class="scanlines"></div>
-
+ 
     <div class="content">
         <!-- Hero Section -->
         <section id="home" class="hero">
@@ -404,7 +636,7 @@
             <p class="subtitle">✨ STEP INTO THE MAGIC ✨</p>
             <p class="terminal-text">> System initialized... Welcome, traveler</p>
         </section>
-
+ 
         <!-- About Section -->
         <section id="about">
             <h2>> ABOUT_US.EXE</h2>
@@ -418,7 +650,7 @@
                 <p><strong>✨ Creating Memories. Defying Possibilities. Inspiring Wonder. ✨</strong></p>
             </div>
         </section>
-
+ 
         <!-- Contact Section -->
         <section id="contact">
             <h2>> CONTACT_INFO.SYS</h2>
@@ -442,7 +674,7 @@
                     <p><small>Available for Pan-India Shows</small></p>
                 </div>
             </div>
-
+ 
             <div class="social-links">
                 <a href="#" title="Facebook">f</a>
                 <a href="#" title="Instagram">📷</a>
@@ -450,7 +682,7 @@
                 <a href="#" title="YouTube">▶️</a>
             </div>
         </section>
-
+ 
         <!-- Legal Section -->
         <section id="legal">
             <h2>> LEGAL_TERMS.DOC</h2>
@@ -473,7 +705,7 @@
             </div>
         </section>
     </div>
-
+ 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -505,54 +737,159 @@
             <p style="margin-top: 10px; opacity: 0.7;">> Magical experiences crafted with precision and passion</p>
         </div>
     </footer>
-
+ 
+    <!-- Login & Matrix Script -->
     <script>
-        // Matrix Code Rain Effect
+        // ===== LOGIN FUNCTIONALITY =====
+        const loginForm = document.getElementById('loginForm');
+        const loginContainer = document.getElementById('loginContainer');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const rememberMeCheckbox = document.getElementById('rememberMe');
+        const loginError = document.getElementById('loginError');
+ 
+        // Valid credentials - CHANGE THESE TO YOUR OWN!
+        const VALID_USERS = {
+            'admin': 'karikala123',
+            'karikala': 'magic2024',
+            'user': 'password123'
+        };
+ 
+        // Check if user is already logged in on page load
+        window.addEventListener('load', () => {
+            if (localStorage.getItem('karikalaLoggedIn') === 'true') {
+                loginContainer.classList.add('hidden');
+            }
+            const rememberedUsername = localStorage.getItem('karikalaRemember');
+            if (rememberedUsername) {
+                usernameInput.value = rememberedUsername;
+                rememberMeCheckbox.checked = true;
+                passwordInput.focus();
+            }
+            addLogoutButton();
+        });
+ 
+        // Handle login form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+ 
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+ 
+            // Validate credentials
+            if (VALID_USERS[username] && VALID_USERS[username] === password) {
+                // Login successful
+                loginError.classList.remove('show');
+                localStorage.setItem('karikalaLoggedIn', 'true');
+                
+                if (rememberMeCheckbox.checked) {
+                    localStorage.setItem('karikalaRemember', username);
+                } else {
+                    localStorage.removeItem('karikalaRemember');
+                }
+ 
+                // Hide login with animation
+                loginContainer.classList.add('hidden');
+                
+                // Scroll to home
+                setTimeout(() => {
+                    document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            } else {
+                // Login failed - show error
+                loginError.classList.add('show');
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        });
+ 
+        // Add logout button to navigation
+        function addLogoutButton() {
+            const nav = document.querySelector('nav');
+            if (!document.getElementById('logoutBtn')) {
+                const logoutButton = document.createElement('button');
+                logoutButton.id = 'logoutBtn';
+                logoutButton.textContent = 'LOGOUT';
+                logoutButton.style.cssText = `
+                    background: transparent;
+                    border: 2px solid #ff0055;
+                    color: #ff0055;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-family: 'Courier New', monospace;
+                    transition: all 0.3s ease;
+                    text-shadow: 0 0 5px #ff0055;
+                    font-weight: bold;
+                `;
+                logoutButton.addEventListener('mouseover', () => {
+                    logoutButton.style.boxShadow = '0 0 15px #ff0055';
+                });
+                logoutButton.addEventListener('mouseout', () => {
+                    logoutButton.style.boxShadow = 'none';
+                });
+                logoutButton.addEventListener('click', logout);
+                nav.appendChild(logoutButton);
+            }
+        }
+ 
+        // Logout function
+        function logout() {
+            localStorage.removeItem('karikalaLoggedIn');
+            loginContainer.classList.remove('hidden');
+            usernameInput.value = '';
+            passwordInput.value = '';
+            loginError.classList.remove('show');
+            window.scrollTo(0, 0);
+            usernameInput.focus();
+        }
+ 
+        // ===== MATRIX CODE RAIN EFFECT =====
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
-
+ 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
-        const characters = 'அஆஇஈஉஊஎஏஐஒஓககாகிகீகுகூகெகேகைகொகோகௌ;
+ 
+        const characters = 'அஆஇஈஉஊஎஏஐஒஓககாகிகீகுகூகெகேகைகொகோகௌ';
         const fontSize = 16;
         const columns = canvas.width / fontSize;
-
+ 
         const drops = [];
         for (let i = 0; i < columns; i++) {
             drops[i] = Math.random() * canvas.height;
         }
-
+ 
         function drawMatrix() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+ 
             ctx.fillStyle = '#0088ff';
             ctx.font = fontSize + 'px monospace';
             ctx.globalAlpha = 0.3;
-
+ 
             for (let i = 0; i < drops.length; i++) {
                 const text = characters.charAt(Math.floor(Math.random() * characters.length));
                 ctx.fillText(text, i * fontSize, drops[i]);
-
+ 
                 if (drops[i] > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
                 drops[i] += fontSize;
             }
             ctx.globalAlpha = 1.0;
-
+ 
             requestAnimationFrame(drawMatrix);
         }
-
+ 
         drawMatrix();
-
+ 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
-
-        // Smooth scroll for navigation
+ 
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -566,54 +903,6 @@
             });
         });
     </script>
-
-    <script>
-        // Matrix Code Rain Effect
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const characters = 'அஆஇஈஉஊஎஏஐஒஓககாகிகீகுகூகெகேகைகொகோகௌஅஆஇஈஉஊஎஏஐஒஓககாகிகீகுகூகெகேகைகொகோகௌ;
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-
-        const drops = [];
-        for (let i = 0; i < columns; i++) {
-            drops[i] = Math.random() * canvas.height;
-        }
-
-        function drawMatrix() {
-            // Semi-transparent black to create fade effect
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#0088ff';
-            ctx.font = fontSize + 'px monospace';
-            ctx.globalAlpha = 0.3;
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                ctx.fillText(text, i * fontSize, drops[i]);
-
-                if (drops[i] > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i] += fontSize;
-            }
-            ctx.globalAlpha = 1.0;
-
-            requestAnimationFrame(drawMatrix);
-        }
-
-        drawMatrix();
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
+ 
